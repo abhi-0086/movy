@@ -1,7 +1,7 @@
 const { required } = require("joi");
 const mongoose = require("mongoose");
 
-const Movie = mongoose.Schema(
+const MovieSchema = mongoose.Schema(
   {
     title: {
       type: String,
@@ -40,6 +40,11 @@ const Movie = mongoose.Schema(
     },
     viewingHistory: {
       type: [Date], // Dates when the movie was watched
+    },
+    contentType: {
+      type: Number, // 0: Movie, 1: Series, 2: Documentary, 3: Short film
+      required: true,
+      enum: [0, 1, 2, 3],
     },
     userId: {
       type: mongoose.Schema.Types.ObjectId,
