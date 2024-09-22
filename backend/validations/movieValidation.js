@@ -10,8 +10,8 @@ const movieValidationSchema = joi.object({
   platforms: joi.array().items(joi.string()).optional(),
   keywords: joi.array().items(joi.string()).optional(),
   haveWatched: joi.boolean().optional(),
-  viewingHistory: joi.array().items(joi.date()).optional(), // Ensure viewingHistory is an array of dates
-  contentType: joi.number().valid(0, 1, 2, 3).required(), // 0: Movie, 1: Series, 2: Documentary, 3: Short Film
+  viewingHistory: joi.array().items(joi.date()).optional(),
+  contentType: joi.number().valid(0, 1, 2, 3).required(),
 });
 
 const updateMovieValidationSchema = joi.object({

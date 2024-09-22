@@ -1,7 +1,7 @@
 const express = require("express");
 const {
   createMovie,
-  //   getMovies,
+  getMovies,
   //   getMovieById,
   //   updateMovie,
   //   deleteMovie,
@@ -13,8 +13,8 @@ const router = express.Router();
 //create a new movie (protected route)
 router.post("/", authMiddleware, createMovie);
 
-// //get all movie list (protected route)
-// router.get("/", authMiddleware, getMovies);
+//get all movie list (protected route)
+router.post("/getMovieByFilter", authMiddleware, getMovies);
 
 // //get movie by id (protected route)
 // router.get("/:id", authMiddleware, getMovieById);
